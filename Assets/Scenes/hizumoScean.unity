@@ -259,8 +259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30B2\u30FC\u30E0\u958B\u59CB"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 63ce1f5fb69564b4f9aab42214418fd4, type: 2}
+  m_sharedMaterial: {fileID: -7786892333198751292, guid: 63ce1f5fb69564b4f9aab42214418fd4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
