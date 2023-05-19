@@ -3052,6 +3052,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: b94a9922bfc18854c9a5a9cf3c5d5016, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: a8083e27cd1d382409e76c08b06767c3, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 250
     m_Data: {fileID: -6017339223957375553, guid: 6092738183c668a4d924383acaf9eb5f, type: 3}
@@ -3071,6 +3073,8 @@ Tilemap:
     m_Data: {fileID: -1385786070971223102, guid: 6092738183c668a4d924383acaf9eb5f, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 6116080786932476827, guid: 6092738183c668a4d924383acaf9eb5f, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 264
     m_Data:
@@ -3173,6 +3177,7 @@ GameObject:
   - component: {fileID: 1996328350}
   - component: {fileID: 1996328349}
   - component: {fileID: 1996328351}
+  - component: {fileID: 1996328352}
   m_Layer: 0
   m_Name: player1
   m_TagString: Untagged
@@ -3260,3 +3265,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!95 &1996328352
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996328348}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a623ef5d3de2ef5438d82e2e805213d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
