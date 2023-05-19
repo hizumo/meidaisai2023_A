@@ -19,6 +19,12 @@ public class PlayerController1 : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
+             // 斜め移動禁止:横方向の入力があれば, 縦は0にする
+            if (input.x != 0)
+            {
+                input.y = 0;
+            }
+
             // 入力があったら
             if (input != Vector2.zero)
             {
