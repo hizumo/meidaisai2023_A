@@ -10,6 +10,12 @@ public class PlayerController1 : MonoBehaviour
     bool isMoving;
     Vector2 input;
 
+    Animator animator;
+    
+    private void Awake()
+    {
+        animator=GetComponent<Animator>();
+    }
     void Update()
     {
         // 動いていない時
@@ -28,7 +34,9 @@ public class PlayerController1 : MonoBehaviour
             // 入力があったら
             if (input != Vector2.zero)
             {
-                // 入力分を追加
+                // 入力があったときに向きを変える
+                animator.SetFloat("MoveX",input.x);
+                animator.SetFloat("MoveY",input.y);
                 Vector2 targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
