@@ -11,6 +11,9 @@ public class PlayerController1 : MonoBehaviour
     Vector2 input;
 
     Animator animator;
+
+    //壁判定のLayer
+    [SerializeField] LayerMask solidObjects;
     
     private void Awake()
     {
@@ -40,7 +43,10 @@ public class PlayerController1 : MonoBehaviour
                 Vector2 targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
-                StartCoroutine(Move(targetPos));
+                if (IsWalkable(targetPos))
+                {
+                    StartCoroutine(Move(targetPos));   
+                }
             }
         }
 
@@ -61,5 +67,12 @@ public class PlayerController1 : MonoBehaviour
         transform.position = targetPos;
 
         isMoving = false;
+    }
+
+    // targetPosに移動可能かを調べる関数
+    bool IsWalkable(Vector2 targetPos)
+    {
+        // targetPosに半径0.2fの円のRayを飛ばして、ぶつからなかったらfalse
+        return Physics2D.OverlapCircle(targetPos, 0.2f, solidObjects) == false;
     }
 }
