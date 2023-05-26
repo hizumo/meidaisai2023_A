@@ -12,19 +12,21 @@ public class ItemData
     private ItemDataBase.ItemType itemType;
     //　アイテムの情報
     private string itemInformation;
+    //　アイテムの個数
+    private int itemQuantity;
 
-    public ItemData(Sprite image, string itemName, ItemDataBase.ItemType itemType, string information)
+    public ItemData(string itemName, ItemDataBase.ItemType itemType, string information, int itemQuantity)//(Sprite image, string itemName, ItemDataBase.ItemType itemType, string information, int itemQuantity)
     {
-        this.itemSprite = image;
+        //this.itemSprite = image;
         this.itemName = itemName;
         this.itemType = itemType;
         this.itemInformation = information;
     }
 
-    public Sprite GetItemSprite()
+    /*public Sprite GetItemSprite()
     {
         return itemSprite;
-    }
+    }*/
 
     public string GetItemName()
     {
@@ -39,5 +41,16 @@ public class ItemData
     public string GetItemInformation()
     {
         return itemInformation;
+    }
+
+    public int GetItemQuantity() 
+    {
+        return itemQuantity;
+    }
+
+    public int ChangeItemQuantity(int item)
+    {
+        itemQuantity = item;
+        return itemQuantity;
     }
 }

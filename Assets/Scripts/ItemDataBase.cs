@@ -19,10 +19,12 @@ public class ItemDataBase : MonoBehaviour
     void Awake()
     {
         //　アイテムの全情報を生成
-        itemDataList.Add(new ItemData(Resources.Load("Item1") as Sprite, "Item1", ItemType.Item1, "１つ目のアイテムです"));
-        itemDataList.Add(new ItemData(Resources.Load("Item2") as Sprite, "Item2", ItemType.Item2, "２つ目のアイテムです"));
-        itemDataList.Add(new ItemData(Resources.Load("Item3") as Sprite, "Item3", ItemType.Item3, "３つ目のアイテムです"));    
+        itemDataList.Add(new ItemData("Item1", ItemType.Item1, "１つ目のアイテムです", 0)); //Resources.Load("Item1") as Sprite, "Item1", ItemType.Item1, "１つ目のアイテムです", 0));
+        itemDataList.Add(new ItemData("Item2", ItemType.Item2, "２つ目のアイテムです", 0));//Resources.Load("Item2") as Sprite, "Item2", ItemType.Item2, "２つ目のアイテムです", 0));
+        itemDataList.Add(new ItemData("Item3", ItemType.Item3, "３つ目のアイテムです", 0));//Resources.Load("Item3") as Sprite, "Item3", ItemType.Item3, "３つ目のアイテムです", 0));    
     }
+
+    //　アイテムデータリストを取得
     public List<ItemData> GetItemDataList()
     {
         return itemDataList;
