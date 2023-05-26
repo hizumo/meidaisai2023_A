@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 92360825}
   - component: {fileID: 92360824}
   - component: {fileID: 92360827}
+  - component: {fileID: 92360828}
   m_Layer: 5
   m_Name: Item1
   m_TagString: Untagged
@@ -272,7 +273,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataBase: {fileID: 1644172669}
   itemInBP: {fileID: 92360822}
-  itemQTYText: {fileID: 0}
+--- !u!114 &92360828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92360822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 92360827}
+          m_TargetAssemblyTypeName: ReduceItemQuantityInBP, Assembly-CSharp
+          m_MethodName: MouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 92360827}
+          m_TargetAssemblyTypeName: ReduceItemQuantityInBP, Assembly-CSharp
+          m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &179568660
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +450,7 @@ GameObject:
   - component: {fileID: 259791596}
   - component: {fileID: 259791595}
   - component: {fileID: 259791598}
+  - component: {fileID: 259791599}
   m_Layer: 5
   m_Name: ItemR3
   m_TagString: Untagged
@@ -540,8 +586,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataBase: {fileID: 1644172669}
   itemButton: {fileID: 259791593}
-  itemInBP: {fileID: 0}
-  itemQTYText: {fileID: 0}
+--- !u!114 &259791599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259791593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 259791598}
+          m_TargetAssemblyTypeName: PutItemInBackPack, Assembly-CSharp
+          m_MethodName: MouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 259791598}
+          m_TargetAssemblyTypeName: PutItemInBackPack, Assembly-CSharp
+          m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &448145083
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,6 +979,7 @@ GameObject:
   - component: {fileID: 730487122}
   - component: {fileID: 730487121}
   - component: {fileID: 730487124}
+  - component: {fileID: 730487125}
   m_Layer: 5
   m_Name: ItemR1
   m_TagString: Untagged
@@ -1025,8 +1115,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataBase: {fileID: 1644172669}
   itemButton: {fileID: 730487119}
-  itemInBP: {fileID: 0}
-  itemQTYText: {fileID: 0}
+--- !u!114 &730487125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730487119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 730487124}
+          m_TargetAssemblyTypeName: PutItemInBackPack, Assembly-CSharp
+          m_MethodName: MouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 730487124}
+          m_TargetAssemblyTypeName: PutItemInBackPack, Assembly-CSharp
+          m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &785413107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1430,7 @@ GameObject:
   - component: {fileID: 973368321}
   - component: {fileID: 973368320}
   - component: {fileID: 973368323}
+  - component: {fileID: 973368324}
   m_Layer: 5
   m_Name: Item2
   m_TagString: Untagged
@@ -1433,7 +1567,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataBase: {fileID: 1644172669}
   itemInBP: {fileID: 973368318}
-  itemQTYText: {fileID: 0}
+--- !u!114 &973368324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973368318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973368323}
+          m_TargetAssemblyTypeName: ReduceItemQuantityInBP, Assembly-CSharp
+          m_MethodName: MouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 973368323}
+          m_TargetAssemblyTypeName: ReduceItemQuantityInBP, Assembly-CSharp
+          m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1007575200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,7 +2257,7 @@ GameObject:
   - component: {fileID: 1353263030}
   - component: {fileID: 1353263029}
   m_Layer: 5
-  m_Name: InfoText
+  m_Name: InformationText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2350,6 +2528,7 @@ GameObject:
   - component: {fileID: 1439850142}
   - component: {fileID: 1439850141}
   - component: {fileID: 1439850144}
+  - component: {fileID: 1439850145}
   m_Layer: 5
   m_Name: Item3
   m_TagString: Untagged
@@ -2486,7 +2665,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataBase: {fileID: 1644172669}
   itemInBP: {fileID: 1439850139}
-  itemQTYText: {fileID: 0}
+--- !u!114 &1439850145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439850139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1439850144}
+          m_TargetAssemblyTypeName: ReduceItemQuantityInBP, Assembly-CSharp
+          m_MethodName: MouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1439850144}
+          m_TargetAssemblyTypeName: ReduceItemQuantityInBP, Assembly-CSharp
+          m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1474541073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,6 +2723,7 @@ GameObject:
   - component: {fileID: 1474541076}
   - component: {fileID: 1474541075}
   - component: {fileID: 1474541078}
+  - component: {fileID: 1474541079}
   m_Layer: 5
   m_Name: ItemR2
   m_TagString: Untagged
@@ -2635,8 +2859,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataBase: {fileID: 1644172669}
   itemButton: {fileID: 1474541073}
-  itemInBP: {fileID: 0}
-  itemQTYText: {fileID: 0}
+--- !u!114 &1474541079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474541073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1474541078}
+          m_TargetAssemblyTypeName: PutItemInBackPack, Assembly-CSharp
+          m_MethodName: MouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1474541078}
+          m_TargetAssemblyTypeName: PutItemInBackPack, Assembly-CSharp
+          m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1576888848
 GameObject:
   m_ObjectHideFlags: 0
