@@ -157,6 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1613776915}
+  countdown: 100
+  timeText: {fileID: 1634774722}
 --- !u!54 &20988677
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -441,7 +443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &576818349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,7 +897,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 863864786}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 5
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
