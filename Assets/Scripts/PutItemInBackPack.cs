@@ -8,7 +8,7 @@ public class PutItemInBackPack : MonoBehaviour
     [SerializeField] private ItemDataBase itemDataBase;
 
     [SerializeField] private GameObject itemButton;
-    private GameObject itemInBP;Å@Å@
+    private GameObject itemInBP;
 
     private ItemData myItemData;
 
