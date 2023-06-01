@@ -8,9 +8,10 @@ public class ItemDataBase : MonoBehaviour
     //　アイテムの種類
     public enum ItemType
     {
-        Item1,
-        Item2,
-        Item3
+        PickAxe,
+        AccelShoes,
+        HealingItem,
+        RayGun
     }
 
    //　アイテムデータのリスト
@@ -19,9 +20,10 @@ public class ItemDataBase : MonoBehaviour
     void Awake()
     {
         //　アイテムの全情報を生成
-        itemDataList.Add(new ItemData("Item1", ItemType.Item1, "１つ目のアイテムです", 0)); //Resources.Load("Item1") as Sprite, "Item1", ItemType.Item1, "１つ目のアイテムです", 0));
-        itemDataList.Add(new ItemData("Item2", ItemType.Item2, "２つ目のアイテムです", 0));//Resources.Load("Item2") as Sprite, "Item2", ItemType.Item2, "２つ目のアイテムです", 0));
-        itemDataList.Add(new ItemData("Item3", ItemType.Item3, "３つ目のアイテムです", 0));//Resources.Load("Item3") as Sprite, "Item3", ItemType.Item3, "３つ目のアイテムです", 0));    
+        itemDataList.Add(new ItemData("Item1", ItemType.PickAxe, "<size=72><b>ツルハシ</b><size=60>：鉱石の採掘時の消費体力を軽減する。", 0)); //Resources.Load("Item1") as Sprite, "Item1", ItemType.PickAxe "１つ目のアイテムです", 0));
+        itemDataList.Add(new ItemData("Item2", ItemType.AccelShoes, "<size=72><b>シューズ</b><size=60>：一定時間移動速度がアップ。", 0));//Resources.Load("Item2") as Sprite, "Item2", ItemType.SpeedShoes, "２つ目のアイテムです", 0));
+        itemDataList.Add(new ItemData("Item3", ItemType.HealingItem, "<size=72><b>回復薬</b><size=60>：体力を一定値回復する。", 0));//Resources.Load("Item3") as Sprite, "Item3", ItemType.HealingItem, "３つ目のアイテムです", 0));    
+        itemDataList.Add(new ItemData("Item4", ItemType.RayGun, "<size=72><b>光線銃</b><size=60>：未定", 0));
     }
 
     //　アイテムデータリストを取得
