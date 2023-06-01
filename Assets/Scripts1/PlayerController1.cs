@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;//UIを扱う際に必要
+using UnityEngine.SceneManagement;
 
 public class PlayerController1 : MonoBehaviour
 {
@@ -14,10 +16,19 @@ public class PlayerController1 : MonoBehaviour
 
     //壁判定のLayer
     [SerializeField] LayerMask solidObjects;
-    
+
+    //HPバーの設定
+    public Slider slider;
+    //カウントダウン
+    public float countdown = 100.0f;
+
     private void Awake()
     {
         animator=GetComponent<Animator>();
+    }
+    void Start()
+    {
+        slider.value = 100;
     }
     void Update()
     {
@@ -47,6 +58,17 @@ public class PlayerController1 : MonoBehaviour
                 {
                     StartCoroutine(Move(targetPos));   
                 }
+            }
+
+            //時間をカウントする
+            countdown -= Time.deltaTime;
+            //HPバーを動かす
+            slider.value = slider.value - Time.deltaTime;
+         
+            //countdownが0以下になったとき
+            if (countdown <= 0)
+            {
+                SceneManager.LoadScene("Result");
             }
         }
 
