@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class ClickEffect : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject prefab;
+    public float deleteTime = 1.0f;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            //マウスカーソルの位置を取得。
+            var mousePosition = Input.mousePosition;
+            mousePosition.z = 3f;
+            GameObject clone = Instantiate(prefab, Camera.main.ScreenToWorldPoint(mousePosition),
+                Quaternion.identity);
+            Destroy(clone, deleteTime);
+        }
     }
 }
