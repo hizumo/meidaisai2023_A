@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class YesNoMsg : MonoBehaviour
 {
@@ -13,8 +14,18 @@ public class YesNoMsg : MonoBehaviour
     public Button yesButton;
     public Button noButton;
     [SerializeField] GameObject panelY;
+    //HPバーの設定
+    public Slider slider;
+    
 
-
+    private void Start()
+    {
+        
+    }
+    private void Update()
+    {
+       
+    }
     // メッセージを表示する
     public void showMsg(string _confirmText)
     {
@@ -55,11 +66,19 @@ public class YesNoMsg : MonoBehaviour
         GameObject objn = GameObject.Find("NoButton");
         // 指定したオブジェクトを削除
         objn.gameObject.SetActive(false);
+        slider.value -= 10;
+        //スコア加算
+        PlayerController1.score += 10;
 
         //3秒停止
         yield return new WaitForSeconds(1);
         panelY.SetActive(false);
+
+        objq.gameObject.SetActive(true);
+        objy.gameObject.SetActive(true);
+        objn.gameObject.SetActive(true);
         this.gameObject.SetActive(false);
+
     }
 
     // いいえボタンの処理

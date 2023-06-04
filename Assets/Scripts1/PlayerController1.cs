@@ -5,6 +5,8 @@ using UnityEngine.UI;//UIを扱う際に必要
 using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 using static PlayerController1;
+using TMPro;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class PlayerController1 : MonoBehaviour
 {
@@ -27,6 +29,10 @@ public class PlayerController1 : MonoBehaviour
     [SerializeField] GameObject panel;
     public Transform target; // 近づくべきオブジェクトのTransform
     private mineral mineral1;
+    //スコア表示
+    [SerializeField] TextMeshProUGUI Score; //TextMeshProの変数宣言
+    public static int score = 0;
+    
 
     private void Awake()
     {
@@ -36,6 +42,7 @@ public class PlayerController1 : MonoBehaviour
     {
         slider.value = 100;
         mineral1 = mineral.go;
+        //DontDestroyOnLoad(gameObject);
     }
     void Update()
     {
@@ -71,9 +78,9 @@ public class PlayerController1 : MonoBehaviour
             countdown -= Time.deltaTime;
             //HPバーを動かす
             slider.value = slider.value - Time.deltaTime;
-         
-            //countdownが0以下になったとき
-            if (countdown <= 0)
+
+            //slider.valueが0以下になったとき
+            if (slider.value <= 0)
             {
                 SceneManager.LoadScene("Result");
             }
@@ -95,7 +102,7 @@ public class PlayerController1 : MonoBehaviour
                     mineral1 = mineral.go;
                 }
             }
-            Debug.Log(mineral1);
+            Score.text = string.Format("{0} Pt", score);
         }
 
         animator.SetBool("isMoving", isMoving);
@@ -129,4 +136,5 @@ public class PlayerController1 : MonoBehaviour
         go,
         stop,     
     }
+
 }
