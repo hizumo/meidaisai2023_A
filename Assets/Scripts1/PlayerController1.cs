@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;//UIを扱う際に必要
 using UnityEngine.SceneManagement;
+using static UnityEngine.GraphicsBuffer;
+using static PlayerController1;
 
 public class PlayerController1 : MonoBehaviour
 {
@@ -21,6 +23,10 @@ public class PlayerController1 : MonoBehaviour
     public Slider slider;
     //カウントダウン
     public float countdown = 100.0f;
+    //鉱石イベントパネル
+    [SerializeField] GameObject panel;
+    public Transform target; // 近づくべきオブジェクトのTransform
+    private mineral mineral1;
 
     private void Awake()
     {
@@ -29,6 +35,7 @@ public class PlayerController1 : MonoBehaviour
     void Start()
     {
         slider.value = 100;
+        mineral1 = mineral.go;
     }
     void Update()
     {
@@ -70,6 +77,25 @@ public class PlayerController1 : MonoBehaviour
             {
                 SceneManager.LoadScene("Result");
             }
+
+            if (mineral1 == mineral.go)
+            {
+                if (Vector3.Distance(transform.position, target.position) < 2f)
+                {
+                    mineral1 = mineral.stop;
+                    // 近づいたときの処理を記述する
+                    panel.SetActive(true);
+                    return;
+                }
+            }
+            else if (mineral1 == mineral.stop)
+            {
+                if (Vector3.Distance(transform.position, target.position) > 2f)
+                {
+                    mineral1 = mineral.go;
+                }
+            }
+            Debug.Log(mineral1);
         }
 
         animator.SetBool("isMoving", isMoving);
@@ -96,5 +122,11 @@ public class PlayerController1 : MonoBehaviour
     {
         // targetPosに半径0.2fの円のRayを飛ばして、ぶつからなかったらfalse
         return Physics2D.OverlapCircle(targetPos, 0.2f, solidObjects) == false;
+    }
+
+    public enum mineral
+    {
+        go,
+        stop,     
     }
 }

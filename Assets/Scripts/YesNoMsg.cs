@@ -46,15 +46,15 @@ public class YesNoMsg : MonoBehaviour
         //Question という名前のオブジェクトを取得
         GameObject objq = GameObject.Find("Question");
         // 指定したオブジェクトを削除
-        Destroy(objq);
+        objq.gameObject.SetActive(false);
         //Question という名前のオブジェクトを取得
         GameObject objy = GameObject.Find("YesButton");
         // 指定したオブジェクトを削除
-        Destroy(objy);
+        objy.gameObject.SetActive(false);
         //Question という名前のオブジェクトを取得
         GameObject objn = GameObject.Find("NoButton");
         // 指定したオブジェクトを削除
-        Destroy(objn);
+        objn.gameObject.SetActive(false);
 
         //3秒停止
         yield return new WaitForSeconds(1);
