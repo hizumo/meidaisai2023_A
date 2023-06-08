@@ -62,4 +62,10 @@ public class ItemData
     {
         return itemWeight;
     }
+    public int GetItemQuantityD(string itemName)
+    {
+        return itemQuantity;
+    }
+
+
 }

@@ -16,7 +16,12 @@ public class YesNoMsg : MonoBehaviour
     [SerializeField] GameObject panelY;
     //HPバーの設定
     public Slider slider;
-     
+    
+    public InventoryManager inventoryManager;
+    private void Start()
+    {
+        inventoryManager = FindObjectOfType<InventoryManager>();
+    }
 
     // はいボタンの処理
     public void onYesClick()

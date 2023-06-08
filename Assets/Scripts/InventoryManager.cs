@@ -16,7 +16,7 @@ public class InventoryManager : MonoBehaviour
     private ItemData myItemData;
 
     private TextMeshProUGUI itemQTYText;
-    private int itemQuantity = 3;
+    int itemQuantity = 3;
 
     private GameObject information;
     private TextMeshProUGUI informationText;
@@ -28,26 +28,97 @@ public class InventoryManager : MonoBehaviour
     UseItems useItems;
    
     public static bool Item2 = true;
+    private GameObject itemInBP;
+    public int changedItem;
+
+    
+    
 
     void Start()
     {
+        
         //　アイテムデータリストを取得
         List<ItemData> myItemDataList = itemDataBase.GetItemDataList();
-       
         //　対応するアイテムデータを取得
         myItemData = itemDataBase.GetItemData(itemButton.name);
         //　アイテムの個数の表示UIを取得
         itemQTYText = itemButton.GetComponentInChildren<TextMeshProUGUI>();
-        itemQTYText.text = itemQuantity.ToString();
+        
+
         //　アイテム情報の表示UIを取得
         information = GameObject.Find("InventoryUI/Panel/Information");
         informationText = information.GetComponentInChildren<TextMeshProUGUI>();
+
+
         //もしシューズか回復薬なら、アイテム使用の準備をする
-        if(itemButton.name == "Item2" || itemButton.name == "Item3")
+        if (itemButton.name == "Item2" || itemButton.name == "Item3")
         {
             UseItemsUI = GameObject.Find("InventoryUI/Panel/UseItemsUI");
             useItems = UseItemsUI.GetComponent<UseItems>();
             panelYText = GameObject.Find("InventoryUI/Panel/PanelY").GetComponentInChildren<TextMeshProUGUI>();
+        
+        
+        }
+
+        //　どのアイテムボタンか判別
+        if (itemButton.name == "Item1")
+        {
+            //Debug.Log(itemButton.name);
+            itemInBP = GameObject.Find("InventoryUI/Panel/Main/Item1");
+            //　対応するアイテムデータを取得
+            myItemData = itemDataBase.GetItemData(itemInBP.name);
+            itemQuantity = PutItemInBackPack.quantity1;
+            itemQTYText.text = itemQuantity.ToString();
+        }
+        else if (itemButton.name == "Item2")
+        {
+            //Debug.Log(itemButton.name);
+            itemInBP = GameObject.Find("InventoryUI/Panel/Main/Item2");
+            //　対応するアイテムデータを取得
+            myItemData = itemDataBase.GetItemData(itemInBP.name);
+            itemQuantity = PutItemInBackPack.quantity2;
+            itemQTYText.text = itemQuantity.ToString();
+        }
+        else if (itemButton.name == "Item3")
+        {
+            //Debug.Log(itemButton.name);
+            itemInBP = GameObject.Find("InventoryUI/Panel/Main/Item3");
+            //　対応するアイテムデータを取得
+            myItemData = itemDataBase.GetItemData(itemInBP.name);
+            itemQuantity = PutItemInBackPack.quantity3;
+            itemQTYText.text = itemQuantity.ToString();
+        }
+        else if (itemButton.name == "Item4")
+        {
+            //Debug.Log(itemButton.name);
+            itemInBP = GameObject.Find("InventoryUI/Panel/Main/Item4");
+            //　対応するアイテムデータを取得
+            myItemData = itemDataBase.GetItemData(itemInBP.name);
+            itemQuantity = PutItemInBackPack.quantity4;
+            itemQTYText.text = itemQuantity.ToString();
+        }
+        else if (itemButton.name == "Item5")
+        {
+            //Debug.Log(itemButton.name);
+            itemInBP = GameObject.Find("InventoryUI/Panel/Main/Item5");
+            
+        }
+        else if (itemButton.name == "Item6")
+        {
+            //Debug.Log(itemButton.name);
+            itemInBP = GameObject.Find("InventoryUI/Panel/Main/Item6");
+            
+        }
+        else if (itemButton.name == "Item7")
+        {
+            //Debug.Log(itemButton.name);
+            itemInBP = GameObject.Find("InventoryUI/Panel/Main/Item7");
+            
+        }
+        else
+        {
+            Debug.Log("Error");
+            return;
         }
         
     }
@@ -99,7 +170,7 @@ public class InventoryManager : MonoBehaviour
             }
         }*/
     }
-    
+
   
     public void MouseOver()
     {

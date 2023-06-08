@@ -175,7 +175,7 @@ public class PlayerController1 : MonoBehaviour
     }
     public void OnClick2()
     {     
-            StartCoroutine(ShowMsg2());       
+        StartCoroutine(ShowMsg2());       
     }
     IEnumerator ShowMsg2()
     {
