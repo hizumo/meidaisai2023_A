@@ -5,6 +5,7 @@ using TMPro;
 using System.ComponentModel;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
+using JetBrains.Annotations;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class InventoryManager : MonoBehaviour
     private GameObject UseItemsUI;
     private TextMeshProUGUI panelYText;
     UseItems useItems;
+   
+    public static bool Item2 = true;
 
     void Start()
     {
@@ -46,7 +49,7 @@ public class InventoryManager : MonoBehaviour
             useItems = UseItemsUI.GetComponent<UseItems>();
             panelYText = GameObject.Find("InventoryUI/Panel/PanelY").GetComponentInChildren<TextMeshProUGUI>();
         }
-       
+        
     }
     //　ボタンを押したときの処理
     public void OnClick()
@@ -66,12 +69,22 @@ public class InventoryManager : MonoBehaviour
         {
             StartCoroutine(ShowMsg());
             panelYText.text = "移動速度アップ！";
+            Item2 = true;
+            //Question という名前のオブジェクトを取得
+            GameObject objb = GameObject.Find("BackButton");
+            objb.gameObject.SetActive(false);
         }
+
+ 
 
         if (itemButton.name == "Item3")
         {
             StartCoroutine(ShowMsg());
-            panelYText.text = "体力が〇〇回復！";
+            panelYText.text = "体力が10回復！";
+            Item2 = false;
+            //Question という名前のオブジェクトを取得
+            GameObject objb = GameObject.Find("BackButton");
+            objb.gameObject.SetActive(false);
         }
         /*if (itemButton.name == "Item3") // || itemButton.name == "Item3")
         {
@@ -86,7 +99,8 @@ public class InventoryManager : MonoBehaviour
             }
         }*/
     }
-
+    
+  
     public void MouseOver()
     {
         informationText.text = myItemData.GetItemInformation();
@@ -102,6 +116,7 @@ public class InventoryManager : MonoBehaviour
         UseItemsUI.SetActive(true);
         useItems.isButtonClicked = false;
         yield return new WaitUntil(() => useItems.isButtonClicked == true);
+
         if (useItems.isItemUsed == true)
         {
             itemQuantity--;
@@ -119,21 +134,6 @@ public class InventoryManager : MonoBehaviour
         itemQTYText.text = itemQuantity.ToString();
         //Debug.Log(itemQuantity.ToString());
     }
-    /*float totalWeight = 0f;
-    int itemQuantityS = 0;
-    float itemWeight = 0f;
-    float moveSpeed;
-    [SerializeField] int defaultSpeed = 5;
-    [SerializeField] bool isShoesUsing;
-    public void AdjustSpeed(List<ItemData> itemDataList)
-    {
-        foreach (ItemData itemData in itemDataList)
-        {
-            itemQuantityS = itemData.GetItemQuantity();
-            itemWeight = itemData.GetItemWeight();
-            totalWeight += itemQuantityS * itemWeight;
-        }
-        moveSpeed = defaultSpeed + 2 * Convert.ToInt32(isShoesUsing) - totalWeight;
-    }*/
+    
 }
 

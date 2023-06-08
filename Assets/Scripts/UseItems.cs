@@ -18,10 +18,14 @@ public class UseItems : MonoBehaviour
     //public Slider slider;
     public bool isItemUsed = false;
     public bool isButtonClicked = false;
+    public PlayerController1 playercontroller;
+    public GameObject objb;
 
     private void Start()
     {
-        
+        playercontroller = FindObjectOfType<PlayerController1>();
+        objb = GameObject.Find("InventoryUI/Panel/BackButton");
+
     }
     private void Update()
     {
@@ -59,7 +63,19 @@ public class UseItems : MonoBehaviour
             Debug.Log("Failed");
         }*/
         StartCoroutine("YesClick");
+        if (InventoryManager.Item2 == true)
+        {
+            playercontroller.OnClick2();
+        }
+        else
+        {
+            playercontroller.OnClick3();
+        }
+        
+        objb.gameObject.SetActive(true);
+
     }
+  
     IEnumerator YesClick()
     {
         isItemUsed = true;
@@ -100,6 +116,9 @@ public class UseItems : MonoBehaviour
         isButtonClicked = true;
         // 非アクティブにする
         gameObject.SetActive(false);
+        
+        objb.gameObject.SetActive(true);
+
     }
 }
 

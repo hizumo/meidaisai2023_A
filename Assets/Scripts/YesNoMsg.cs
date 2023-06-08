@@ -16,34 +16,7 @@ public class YesNoMsg : MonoBehaviour
     [SerializeField] GameObject panelY;
     //HPバーの設定
     public Slider slider;
-    
-
-    private void Start()
-    {
-        
-    }
-    private void Update()
-    {
-       
-    }
-    // メッセージを表示する
-    public void showMsg(string _confirmText)
-    {
-        showMsg(_confirmText, "はい", "いいえ");
-    }
-    public void showMsg(string _confirmText, string _yesButtonText, string _noButtonText)
-    {
-        // 質問文を表示するテキストに値を設定
-        confirmText.text = _confirmText;
-        // はいボタンのラベルを設定
-        yesButton.GetComponentInChildren<Text>().text = _yesButtonText;
-        // いいえボタンのラベルを設定
-        noButton.GetComponentInChildren<Text>().text = _noButtonText;
-        // アクティブにする（表示する）
-        gameObject.SetActive(true);
-        // ボタンのアクションを設定
-
-    }
+     
 
     // はいボタンの処理
     public void onYesClick()
@@ -80,7 +53,40 @@ public class YesNoMsg : MonoBehaviour
         this.gameObject.SetActive(false);
 
     }
+    public void onYesClickE()
+    {
+        StartCoroutine("YesClickE");
+    }
+    IEnumerator YesClickE()
+    {
+        panelY.SetActive(true);
 
+        //Question という名前のオブジェクトを取得
+        GameObject objq = GameObject.Find("QuestionE");
+        // 指定したオブジェクトを削除
+        objq.gameObject.SetActive(false);
+        //Question という名前のオブジェクトを取得
+        GameObject objy = GameObject.Find("YesButtonE");
+        // 指定したオブジェクトを削除
+        objy.gameObject.SetActive(false);
+        //Question という名前のオブジェクトを取得
+        GameObject objn = GameObject.Find("NoButtonE");
+        // 指定したオブジェクトを削除
+        objn.gameObject.SetActive(false);
+        slider.value -= 20;
+        //スコア加算
+        PlayerController1.score += 20;
+
+        //3秒停止
+        yield return new WaitForSeconds(1);
+        panelY.SetActive(false);
+
+        objq.gameObject.SetActive(true);
+        objy.gameObject.SetActive(true);
+        objn.gameObject.SetActive(true);
+        this.gameObject.SetActive(false);
+
+    }
     // いいえボタンの処理
     public void onNoClick()
     {

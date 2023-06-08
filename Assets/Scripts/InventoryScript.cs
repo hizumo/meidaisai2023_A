@@ -25,12 +25,12 @@ public class InventoryScript : MonoBehaviour
     {
         panelG.SetActive(false);
         panelI.SetActive(true);
-        return;
+        
     }
     public void GameClick()
     {
         panelG.SetActive(true);
         panelI.SetActive(false);
-        return;
+        
     }
 }
