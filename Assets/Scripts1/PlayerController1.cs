@@ -42,9 +42,9 @@ public class PlayerController1 : MonoBehaviour
 
     //重さとスピードの関係
     float totalWeight = 0f;
-    int itemQuantityS = 0;
+    float itemQuantityS = 0;
     float itemWeight = 0f;   
-    int defaultSpeed = 5;
+    float defaultSpeed = 5;
     [SerializeField] bool isShoesUsing;
     private void Awake()
     {
@@ -55,8 +55,13 @@ public class PlayerController1 : MonoBehaviour
         slider.value = 100;
         mineral1 = mineral.go;
         enemy = Enemy.go;
-        moveSpeed = defaultSpeed - totalWeight;
+       
         //DontDestroyOnLoad(gameObject);
+
+      
+
+
+
     }
     void Update()
     {
@@ -133,6 +138,17 @@ public class PlayerController1 : MonoBehaviour
             }
           
             Score.text = string.Format("{0} Pt", score);
+            totalWeight = PutItemInBackPack.itemWeight1 * PutItemInBackPack.quantity1 +
+              PutItemInBackPack.itemWeight2 * PutItemInBackPack.quantity2 +
+              PutItemInBackPack.itemWeight3 * PutItemInBackPack.quantity3 +
+              PutItemInBackPack.itemWeight4 * PutItemInBackPack.quantity4 +
+              InventoryManager.quantity5 * InventoryManager.itemWeight5+
+              InventoryManager.quantity6 * InventoryManager.itemWeight6+
+              InventoryManager.quantity7 * InventoryManager.itemWeight7;
+
+            //moveSpeed = defaultSpeed + 2 * Convert.ToInt32(isShoesUsing) - totalWeight;
+            moveSpeed = defaultSpeed - totalWeight;
+            
         }
         
  
@@ -151,17 +167,10 @@ public class PlayerController1 : MonoBehaviour
         }
       
     }
-    public void AdjustSpeed(List<ItemData> itemDataList)
-    {
-        foreach (ItemData itemData in itemDataList)
-        {
-            itemQuantityS = itemData.GetItemQuantity();
-            itemWeight = itemData.GetItemWeight();
-            totalWeight += itemQuantityS * itemWeight;
-        }
-        //moveSpeed = defaultSpeed + 2 * Convert.ToInt32(isShoesUsing) - totalWeight;
-        moveSpeed = defaultSpeed  - totalWeight;
-    }
+    
+   
+           
+    
 
     //ポーズ中にクリックされたとき
     public void InventoryClick()
@@ -179,13 +188,17 @@ public class PlayerController1 : MonoBehaviour
     }
     IEnumerator ShowMsg2()
     {
-        moveSpeed = moveSpeed * 3/2;
+        moveSpeed = moveSpeed * 3/2 + 1;
         yield return new WaitForSeconds(10);
-        moveSpeed = moveSpeed * 2/3;
+        moveSpeed = (moveSpeed-1) * 2/3;
     }
     public void OnClick3()
     {
         slider.value = slider.value + 10;
+    }
+    public void endClick()
+    {
+        slider.value = 0;
     }
 
     IEnumerator Move(Vector3 targetPos)

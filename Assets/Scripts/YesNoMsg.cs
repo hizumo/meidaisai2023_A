@@ -18,6 +18,7 @@ public class YesNoMsg : MonoBehaviour
     public Slider slider;
     
     public InventoryManager inventoryManager;
+    public static int rnd;
     private void Start()
     {
         inventoryManager = FindObjectOfType<InventoryManager>();
@@ -44,19 +45,61 @@ public class YesNoMsg : MonoBehaviour
         GameObject objn = GameObject.Find("NoButton");
         // 指定したオブジェクトを削除
         objn.gameObject.SetActive(false);
-        if (PutItemInBackPack.quantity1 >= 1)
-        {
-            slider.value -= 5;
-            //スコア加算
-            PlayerController1.score += 20;
-            PutItemInBackPack.quantity1 -= 1;
-        }
-        else if (PutItemInBackPack.quantity1 == 0)
-        {
-            slider.value -= 10;
-            //スコア加算
-            PlayerController1.score += 10;
 
+        YesNoMsg.rnd = UnityEngine.Random.Range(5, 8);
+        if (rnd == 5)
+        {
+            if (PutItemInBackPack.quantity1 >= 1)
+            {
+                slider.value -= 5;
+                //スコア加算
+                PlayerController1.score += 20;
+                PutItemInBackPack.quantity1 -= 1;
+            }
+            else if (PutItemInBackPack.quantity1 == 0)
+            {
+                slider.value -= 10;
+                //スコア加算
+                PlayerController1.score += 10;
+
+            }
+            InventoryManager.quantity5 += 1;
+        }
+        if (rnd == 6)
+        {
+            if (PutItemInBackPack.quantity1 >= 1)
+            {
+                slider.value -=2;
+                //スコア加算
+                PlayerController1.score += 10;
+                PutItemInBackPack.quantity1 -= 1;
+            }
+            else if (PutItemInBackPack.quantity1 == 0)
+            {
+                slider.value -= 5;
+                //スコア加算
+                PlayerController1.score += 10;
+
+            }
+            InventoryManager.quantity6 += 1;
+        }
+        if (rnd == 7)
+        {
+            if (PutItemInBackPack.quantity1 >= 1)
+            {
+                slider.value -= 10;
+                //スコア加算
+                PlayerController1.score += 20;
+                PutItemInBackPack.quantity1 -= 1;
+            }
+            else if (PutItemInBackPack.quantity1 == 0)
+            {
+                slider.value -= 20;
+                //スコア加算
+                PlayerController1.score += 10;
+
+            }
+            InventoryManager.quantity7 += 1;
         }
 
         //3秒停止

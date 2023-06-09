@@ -65,11 +65,15 @@ public class UseItems : MonoBehaviour
         StartCoroutine("YesClick");
         if (InventoryManager.Item2 == true)
         {
+            
             playercontroller.OnClick2();
+            
         }
         else
         {
+            
             playercontroller.OnClick3();
+            
         }
         
         objb.gameObject.SetActive(true);

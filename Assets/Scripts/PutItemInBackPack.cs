@@ -16,6 +16,7 @@ public class PutItemInBackPack : MonoBehaviour
 
     private TextMeshProUGUI itemQTYText;
     public int itemQuantity = 0;
+    public float itemWeight = 0;
 
     private GameObject information;
     private TextMeshProUGUI informationText;
@@ -31,6 +32,10 @@ public class PutItemInBackPack : MonoBehaviour
     public static int quantity3 = 0;
     public static int quantity4 = 0;
 
+    public static float itemWeight1 = 0;
+    public static float itemWeight2 = 0;
+    public static float itemWeight3 = 0;
+    public static float itemWeight4 = 0;
     void Start()
     {
         //　アイテムデータリストを取得
@@ -41,6 +46,7 @@ public class PutItemInBackPack : MonoBehaviour
             //Debug.Log(itemButton.name);
             itemInBP = GameObject.Find("ItemSelectUI/Panel/BackPackMain/Item1");
             switch1 = true;
+
         }
         else if (itemButton.name == "ItemR2")
         {
@@ -81,6 +87,7 @@ public class PutItemInBackPack : MonoBehaviour
         //　アイテムの個数を取得し、＋１する
         itemQuantity = myItemData.GetItemQuantity();
         itemQuantity++;
+        itemWeight = myItemData.GetItemWeight();
         //Debug.Log(itemQuantity.ToString());
         //　個数の変更を記録
         myItemData.ChangeItemQuantity(itemQuantity);
@@ -96,6 +103,7 @@ public class PutItemInBackPack : MonoBehaviour
         if (switch1 == true)
         {
             quantity1 = itemQuantity;
+            itemWeight1 = itemWeight;
         }
         if (switch2 == true)
         {

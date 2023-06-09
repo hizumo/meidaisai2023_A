@@ -31,8 +31,13 @@ public class InventoryManager : MonoBehaviour
     private GameObject itemInBP;
     public int changedItem;
 
+    public static int quantity5 = 0;
+    public static int quantity6 = 0;
+    public static int quantity7 = 0;
 
-
+    public static float itemWeight5 = 0;
+    public static float itemWeight6 = 0;
+    public static float itemWeight7 = 0;
 
     void Start()
     {
@@ -125,18 +130,30 @@ public class InventoryManager : MonoBehaviour
         {
             //Debug.Log(itemButton.name);
             itemInBP = GameObject.Find("InventoryUI/Panel/Main/Item5");
-
+            myItemData = itemDataBase.GetItemData(itemInBP.name);
+            itemQuantity = InventoryManager.quantity5;
+            itemQTYText.text = itemQuantity.ToString();
+            InventoryManager.itemWeight5 = myItemData.GetItemWeight();
         }
         else if (itemButton.name == "Item6")
         {
             //Debug.Log(itemButton.name);
             itemInBP = GameObject.Find("InventoryUI/Panel/Main/Item6");
+            myItemData = itemDataBase.GetItemData(itemInBP.name);
+            itemQuantity = InventoryManager.quantity6;
+            itemQTYText.text = itemQuantity.ToString();
+            InventoryManager.itemWeight6 = myItemData.GetItemWeight();
+
 
         }
         else if (itemButton.name == "Item7")
         {
             //Debug.Log(itemButton.name);
             itemInBP = GameObject.Find("InventoryUI/Panel/Main/Item7");
+            myItemData = itemDataBase.GetItemData(itemInBP.name);
+            itemQuantity = InventoryManager.quantity7;
+            itemQTYText.text = itemQuantity.ToString();
+            InventoryManager.itemWeight7 = myItemData.GetItemWeight();
 
         }
         else
@@ -168,6 +185,7 @@ public class InventoryManager : MonoBehaviour
             //Question という名前のオブジェクトを取得
             GameObject objb = GameObject.Find("BackButton");
             objb.gameObject.SetActive(false);
+            
         }
 
  
@@ -180,6 +198,7 @@ public class InventoryManager : MonoBehaviour
             //Question という名前のオブジェクトを取得
             GameObject objb = GameObject.Find("BackButton");
             objb.gameObject.SetActive(false);
+            
         }
         /*if (itemButton.name == "Item3") // || itemButton.name == "Item3")
         {
@@ -215,7 +234,15 @@ public class InventoryManager : MonoBehaviour
         if (useItems.isItemUsed == true)
         {
             itemQuantity--;
-            isShoesUse = true;
+            if (itemButton.name == "Item2")
+            {
+                PutItemInBackPack.quantity2 = itemQuantity;
+            }
+            if (itemButton.name == "Item3")
+            {
+                PutItemInBackPack.quantity3 = itemQuantity;
+            }
+                isShoesUse = true;
             useItems.isItemUsed = false;
             //Debug.Log("used");
         }
