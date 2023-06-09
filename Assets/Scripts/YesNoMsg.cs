@@ -44,9 +44,20 @@ public class YesNoMsg : MonoBehaviour
         GameObject objn = GameObject.Find("NoButton");
         // 指定したオブジェクトを削除
         objn.gameObject.SetActive(false);
-        slider.value -= 10;
-        //スコア加算
-        PlayerController1.score += 10;
+        if (PutItemInBackPack.quantity1 >= 1)
+        {
+            slider.value -= 5;
+            //スコア加算
+            PlayerController1.score += 20;
+            PutItemInBackPack.quantity1 -= 1;
+        }
+        else if (PutItemInBackPack.quantity1 == 0)
+        {
+            slider.value -= 10;
+            //スコア加算
+            PlayerController1.score += 10;
+
+        }
 
         //3秒停止
         yield return new WaitForSeconds(1);
@@ -78,10 +89,21 @@ public class YesNoMsg : MonoBehaviour
         GameObject objn = GameObject.Find("NoButtonE");
         // 指定したオブジェクトを削除
         objn.gameObject.SetActive(false);
-        slider.value -= 20;
-        //スコア加算
-        PlayerController1.score += 20;
+        if (PutItemInBackPack.quantity4 >= 1)
+        {
+            slider.value -= 5;
+            //スコア加算
+            PlayerController1.score += 20;
+            PutItemInBackPack.quantity4 -= 1;
+        }
+        else if (PutItemInBackPack.quantity4 == 0)
+        {
+            slider.value -= 20;
+            //スコア加算
+            PlayerController1.score += 10;
 
+        }
+        
         //3秒停止
         yield return new WaitForSeconds(1);
         panelY.SetActive(false);
