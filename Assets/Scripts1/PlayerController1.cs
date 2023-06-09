@@ -148,6 +148,10 @@ public class PlayerController1 : MonoBehaviour
 
             //moveSpeed = defaultSpeed + 2 * Convert.ToInt32(isShoesUsing) - totalWeight;
             moveSpeed = defaultSpeed - totalWeight;
+            if (moveSpeed < 0.5)
+            {
+                moveSpeed = 0.5f;
+            }
             
         }
         
