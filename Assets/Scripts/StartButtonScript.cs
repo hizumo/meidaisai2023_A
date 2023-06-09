@@ -8,5 +8,8 @@ public class GameStartButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene("GameScenes1 maitake 1");
     }
-
+    
+  
+    
 }
+

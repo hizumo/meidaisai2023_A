@@ -53,14 +53,14 @@ public class YesNoMsg : MonoBehaviour
             {
                 slider.value -= 5;
                 //スコア加算
-                PlayerController1.score += 20;
+                PlayerController1.score += 40;
                 PutItemInBackPack.quantity1 -= 1;
             }
             else if (PutItemInBackPack.quantity1 == 0)
             {
                 slider.value -= 10;
                 //スコア加算
-                PlayerController1.score += 10;
+                PlayerController1.score += 20;
 
             }
             InventoryManager.quantity5 += 1;
@@ -136,14 +136,14 @@ public class YesNoMsg : MonoBehaviour
         {
             slider.value -= 5;
             //スコア加算
-            PlayerController1.score += 20;
+            PlayerController1.score += 30;
             PutItemInBackPack.quantity4 -= 1;
         }
         else if (PutItemInBackPack.quantity4 == 0)
         {
             slider.value -= 20;
             //スコア加算
-            PlayerController1.score += 10;
+            PlayerController1.score += 5;
 
         }
         

@@ -108,14 +108,17 @@ public class PutItemInBackPack : MonoBehaviour
         if (switch2 == true)
         {
             quantity2 = itemQuantity;
+            itemWeight2 = itemWeight;
         }
         if (switch3 == true)
         {
             quantity3 = itemQuantity;
+            itemWeight3 = itemWeight;
         }
         if (switch4 == true)
         {
             quantity4 = itemQuantity;
+            itemWeight4 = itemWeight;
         }
     }
 

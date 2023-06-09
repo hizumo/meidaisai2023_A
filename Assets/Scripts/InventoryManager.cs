@@ -26,10 +26,9 @@ public class InventoryManager : MonoBehaviour
     private GameObject UseItemsUI;
     private TextMeshProUGUI panelYText;
     UseItems useItems;
-   
+
     public static bool Item2 = true;
     private GameObject itemInBP;
-    public int changedItem;
 
     public static int quantity5 = 0;
     public static int quantity6 = 0;
@@ -162,7 +161,7 @@ public class InventoryManager : MonoBehaviour
             return;
         }
     }
-    
+
     //　ボタンを押したときの処理
     public void OnClick()
     {
@@ -177,7 +176,7 @@ public class InventoryManager : MonoBehaviour
         {
             itemInBP.SetActive(true);
         }*/
-        if(itemButton.name == "Item2")
+        if (itemButton.name == "Item2")
         {
             StartCoroutine(ShowMsg());
             panelYText.text = "移動速度アップ！";
@@ -185,10 +184,10 @@ public class InventoryManager : MonoBehaviour
             //Question という名前のオブジェクトを取得
             GameObject objb = GameObject.Find("BackButton");
             objb.gameObject.SetActive(false);
-            
+
         }
 
- 
+
 
         if (itemButton.name == "Item3")
         {
@@ -198,7 +197,7 @@ public class InventoryManager : MonoBehaviour
             //Question という名前のオブジェクトを取得
             GameObject objb = GameObject.Find("BackButton");
             objb.gameObject.SetActive(false);
-            
+
         }
         /*if (itemButton.name == "Item3") // || itemButton.name == "Item3")
         {
@@ -214,7 +213,7 @@ public class InventoryManager : MonoBehaviour
         }*/
     }
 
-  
+
     public void MouseOver()
     {
         informationText.text = myItemData.GetItemInformation();
@@ -242,7 +241,7 @@ public class InventoryManager : MonoBehaviour
             {
                 PutItemInBackPack.quantity3 = itemQuantity;
             }
-                isShoesUse = true;
+            isShoesUse = true;
             useItems.isItemUsed = false;
             //Debug.Log("used");
         }
@@ -256,6 +255,6 @@ public class InventoryManager : MonoBehaviour
         itemQTYText.text = itemQuantity.ToString();
         //Debug.Log(itemQuantity.ToString());
     }
-    
+
 }
 
