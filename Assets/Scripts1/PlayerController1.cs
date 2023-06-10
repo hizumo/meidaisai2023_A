@@ -62,7 +62,6 @@ public class PlayerController1 : MonoBehaviour
         mineral2 = mineral.go;
         enemy = Enemy.go;
         enemy1 = Enemy.go;
-
         //DontDestroyOnLoad(gameObject);
 
 

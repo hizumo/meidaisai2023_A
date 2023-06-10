@@ -40,7 +40,7 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
-
+     
         //　アイテムデータリストを取得
         List<ItemData> myItemDataList = itemDataBase.GetItemDataList();
         //　対応するアイテムデータを取得

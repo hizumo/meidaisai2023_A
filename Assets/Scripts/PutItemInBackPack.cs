@@ -38,6 +38,7 @@ public class PutItemInBackPack : MonoBehaviour
     public static float itemWeight4 = 0;
     void Start()
     {
+    
         //　アイテムデータリストを取得
         List<ItemData> myItemDataList = itemDataBase.GetItemDataList();
         //　どのアイテムボタンか判別

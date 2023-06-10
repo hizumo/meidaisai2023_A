@@ -350,6 +350,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataBase: {fileID: 1644172669}
   itemInBP: {fileID: 92360822}
+  itemButton: {fileID: 92360822}
+  switch1: 0
+  switch2: 0
+  switch3: 0
+  switch4: 0
 --- !u!114 &92360828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,6 +656,11 @@ MonoBehaviour:
   itemDataBase: {fileID: 1644172669}
   itemButton: {fileID: 259791593}
   itemQuantity: 0
+  itemWeight: 0
+  switch1: 0
+  switch2: 0
+  switch3: 0
+  switch4: 0
 --- !u!114 &259791599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,6 +808,11 @@ MonoBehaviour:
   itemDataBase: {fileID: 1644172669}
   itemButton: {fileID: 285391289}
   itemQuantity: 0
+  itemWeight: 0
+  switch1: 0
+  switch2: 0
+  switch3: 0
+  switch4: 0
 --- !u!114 &285391293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1455,6 +1470,11 @@ MonoBehaviour:
   itemDataBase: {fileID: 1644172669}
   itemButton: {fileID: 730487119}
   itemQuantity: 0
+  itemWeight: 0
+  switch1: 0
+  switch2: 0
+  switch3: 0
+  switch4: 0
 --- !u!114 &730487125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,6 +2257,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataBase: {fileID: 1644172669}
   itemInBP: {fileID: 973368318}
+  itemButton: {fileID: 973368318}
+  switch1: 0
+  switch2: 0
+  switch3: 0
+  switch4: 0
 --- !u!114 &973368324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2519,6 +2544,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataBase: {fileID: 1644172669}
   itemInBP: {fileID: 1017743042}
+  itemButton: {fileID: 1017743042}
+  switch1: 0
+  switch2: 0
+  switch3: 0
+  switch4: 0
 --- !u!114 &1017743046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3812,6 +3842,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDataBase: {fileID: 1644172669}
   itemInBP: {fileID: 1439850139}
+  itemButton: {fileID: 1439850139}
+  switch1: 0
+  switch2: 0
+  switch3: 0
+  switch4: 0
 --- !u!114 &1439850145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4008,6 +4043,11 @@ MonoBehaviour:
   itemDataBase: {fileID: 1644172669}
   itemButton: {fileID: 1474541073}
   itemQuantity: 0
+  itemWeight: 0
+  switch1: 0
+  switch2: 0
+  switch3: 0
+  switch4: 0
 --- !u!114 &1474541079
 MonoBehaviour:
   m_ObjectHideFlags: 0
