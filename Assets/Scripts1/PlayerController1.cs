@@ -50,6 +50,7 @@ public class PlayerController1 : MonoBehaviour
     float itemWeight = 0f;
     float defaultSpeed = 5;
     [SerializeField] bool isShoesUsing;
+    public bool onoff = true;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -189,13 +190,17 @@ public class PlayerController1 : MonoBehaviour
               InventoryManager.quantity6 * InventoryManager.itemWeight6 +
               InventoryManager.quantity7 * InventoryManager.itemWeight7;
 
-            //moveSpeed = defaultSpeed + 2 * Convert.ToInt32(isShoesUsing) - totalWeight;
-            moveSpeed = defaultSpeed - totalWeight;
-            if (moveSpeed < 0.5f)
+            if (onoff == true)
             {
-                moveSpeed = 0.5f;
+                //moveSpeed = defaultSpeed + 2 * Convert.ToInt32(isShoesUsing) - totalWeight;
+                moveSpeed = defaultSpeed - totalWeight;
+                if (moveSpeed < 0.5f)
+                {
+                    moveSpeed = 0.5f;
+                }
+                
             }
-            Debug.Log("totalWeight"+ totalWeight);
+            Debug.Log("totalWeight" + totalWeight);
             Debug.Log("moveSpeed" + moveSpeed);
         }
 
@@ -232,13 +237,17 @@ public class PlayerController1 : MonoBehaviour
     }
     public void OnClick2()
     {
+        
         StartCoroutine(ShowMsg2());
+       
     }
     IEnumerator ShowMsg2()
     {
-        moveSpeed = moveSpeed * 3 / 2 + 1;
+        onoff = false;
+        moveSpeed = moveSpeed * 2;
         yield return new WaitForSeconds(10);
-        moveSpeed = (moveSpeed - 1) * 2 / 3;
+        moveSpeed = moveSpeed * 1/2;
+        onoff = true;
     }
     public void OnClick3()
     {
